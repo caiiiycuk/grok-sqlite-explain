@@ -407,7 +407,7 @@ class GenericOpInfo(object):
             s += ' to r%s' % (', r'.join(map(str, self.regWrites)),)
 
         if self.comment:
-            s += " <font color='#888888'>%s</font>" % (self.comment,)
+            s += " <font color='#888888'>%s</font>" % (self.comment.replace(">", "&lt;").replace("<", "&gt;"),)
 
         if HAVE_COUNTS:
             s = ("<tr><td align='left'>%s</td>" +
